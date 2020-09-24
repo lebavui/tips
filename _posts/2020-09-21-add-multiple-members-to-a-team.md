@@ -2,37 +2,41 @@
 layout: post
 title: Cách sử dụng Windows Powershell để thêm nhiều thành viên vào lớp học cùng một lúc
 #subtitle: 
-#gh-repo: daattali/beautiful-jekyll
-#gh-badge: [star, fork, follow]
-tags: [tips, microsoft teams
-]
+gh-repo: lebavui/tips
+gh-badge: [star, fork, follow]
+tags: [tips, microsoft teams]
 comments: false
 ---
 
-Bình thường khi muốn thêm các thành viên vào trong một lớp, ta cần phải thêm từng thành viên một. Đối với lớp học có số lượng sinh viên nhiều, việc này sẽ mất nhiều thời gian.
+Khi sử dụng Teams, ta chỉ có thể thêm từng sinh viên vào lớp học. Đối với lớp học có nhiều sinh viên, việc này sẽ mất nhiều thời gian.
+Với việc sử dụng PowerShell ta có thể thêm nhiều sinh viên trong cùng một lúc bằng một vài lệnh đơn giản.
 
 Bước 1.
 
+Mở PowerShell và cài đặt module MicrosoftTeams:
 ~~~
 Install-Module -Name MicrosoftTeams
 ~~~
 
 Bước 2.
 
+Kết nối với phần mềm Microsoft Teams, ở bước này bạn cần truy nhập vào tài khoản được sử dụng với Teams
 ~~~
 Connect-MicrosoftTeams
 ~~~
 
 Bước 3.
 
+Lấy ID của lớp cần thêm sinh viên, giả sử lớp đã được tạo trước đó.
 ~~~
 Get-Team -DisplayName "tên_hiển_thị_của_nhóm"
 ~~~
 
 Bước 4.
 
+Trước khi thực hiện bước này, bạn cần chuẩn bị 1 file văn bản chứa email của sinh viên, mỗi email trên một dòng.
 ~~~
-Import-Csv -Path <your_csv_file_name_goes_here> | foreach{Add-TeamUser -GroupId YOUR_TEAM_ID -user $_.upn_list}
+Import-Csv -Path <tên_file_văn_bản> | foreach{Add-TeamUser -GroupId YOUR_TEAM_ID -user $_.upn_list}
 ~~~
 
 Chúc các bạn thành công!
