@@ -24,3 +24,7 @@ Chuyển file patch sang máy tính còn lại.
 ~~~
 git apply changes.patch
 ~~~
+Trong trường hợp bị lỗi trailing whitespace thì hãy thử với lệnh sau:
+~~~
+git apply --reject --whitespace=fix changes.path
+~~~
