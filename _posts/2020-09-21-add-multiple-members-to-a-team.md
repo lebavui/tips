@@ -39,7 +39,7 @@ Ví dụ về file chứa danh sách email của sinh viên như sau:
 email1
 email2
 ~~~
-Để cho thuận thiện thì nên sử dụng mã lớp để làm tên của danh sách (để ở đầu file) và đồng thời là tên của file văn bản.
+Để cho thuận tiện thì nên sử dụng mã lớp để làm tên của danh sách (để ở đầu file) và đồng thời là tên của file văn bản.
 
 Sau khi có danh sách nhập lệnh sau để thêm sinh viên vào lớp:
 ~~~
